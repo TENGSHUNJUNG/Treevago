@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/ico" href="images/Logo_02.png" />
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: '微軟正黑體', calibri;
+        background: url(images/bg_main.jpg) repeat 0 0;
+    }
+    /*a{
+            font-family: '微軟正黑體''calibri';
+        }*/
+
+    ul>li {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    .clearfix:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+    /********************nav_bar*********************/
+
+    .nav {
+        max-width: 100%;
+        height: 120px;
+        background: #ff931e;
+    }
+
+    .main_menu {
+        max-width: 1180px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 180px;
+        height: 100px;
+        background: url(images/TREEVAGO_logo.png) no-repeat 0 0;
+        background-size: contain;
+        float: left;
+        margin-top: 20px;
+    }
+
+    .menu_01>ul>li {
+        width: 120px;
+        text-align: center;
+        float: left;
+    }
+
+    .menu_01>ul>li>a {
+        color: white;
+        text-decoration: none;
+        font-family: '微軟正黑體';
+        /*margin-left: 20px;*/
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .menu_01 {
+        position: relative;
+        float: right;
+        margin-top: 79px;
+    }
+
+    .booking {
+        margin-left: 80px;
+    }
+
+    .bar_box {
+        display: none;
+    }
+    /******************nav_bar***********************/
+    /*********************nav_rwd************************/
+
+    @media only screen and (max-width:1250px) {
+        /*      .menu_page{
+                        padding: 0;
+                        margin:0; 
+                        background:rgba(0,0,0,.3);
+                        z-index: 103;
+                        width: 100%;
+                        height: 500px;
+                        text-align:center; 
+                    }
+                    .menu_page_li>a{
+                        line-height: 80px;
+                        font-size: 36px;
+                        color: #fff;
+                        float: none;
+                        display: block;
+                    }*/
+        .menu_01 {
+            display: none;
+        }
+        .header {
+            width: 100%;
+            /*  height: 180px;*/
+            height: 80px;
+            background: rgba(0, 0, 0, .5);
+        }
+        .logo {
+            width: 200px;
+            height: 80px;
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            margin: 10px 0 0 -80px;
+        }
+        .menu_page {
+            position: absolute;
+            right: 0;
+            top: 120px;
+            width: 100%;
+            text-align: center;
+            z-index: 999;
+            display: block;
+            opacity: 0;
+            max-height: 0px;
+            overflow: hidden;
+        }
+        .menu_page_li>a {
+            background: #ff931e;
+            line-height: 100px;
+            font-size: 18px;
+            color: #fff;
+            float: none;
+            display: block;
+            text-decoration: none;
+        }
+        .menu_page_li>a:hover {
+            background: #ffaa1e;
+        }
+        .bar_box {
+            float: right;
+            /*position: absolute;
+                        top:10%;*/
+            margin-top: 70px;
+            cursor: pointer;
+            display: block;
+        }
+        .nav_active .bar1 {
+            transform: rotate(-45deg) translate(-9px, 7px);
+        }
+        .nav_active .bar2 {
+            opacity: 0;
+        }
+        .nav_active .bar3 {
+            transform: rotate(45deg) translate(-9px, -8px);
+        }
+        .bar {
+            width: 36px;
+            height: 6px;
+            background: #ccc;
+            margin: 6px 10px;
+            border-radius: 3px;
+        }
+        .bar_box .nav_active {
+            opacity: 1;
+            max-height: 500px;
+        }
+        .transition {
+            transition: all .5s;
+        }
+    }
+    /****************main-nav************************/
+    /*******************sub_nav*************************/
+
+    .menu_01>ul>li:hover .sub_nav {
+        max-height: 1000px;
+    }
+
+    .sub_nav {
+
+        position: absolute;
+        background: #ff931e;
+        top: 41px;
+        width: 120px;
+        overflow: hidden;
+        max-height: 0px;
+    }
+
+    .sub_nav a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 10px;
+        display: block;
+    }
+
+    .sub_nav a:hover {
+        background: #ffaa1e;
+    }
+
+    .sub_transition {
+        transition: .5s;
+    }
+    /********************sub_nav***********************/
+    /*********************main_area01*****************************/
+
+    .main_area01 {
+        max-width: 100%;
+        height: 90vh;
+        background: black;
+    }
+    /*********************main_area01*****************************/
+    /*********************main_area02*****************************/
+
+    .main_area02 {
+        max-width: 100%;
+        height: 100vh;
+        background: gray;
+    }
+    /*********************main_area02*****************************/
+    /*********************main_area02*****************************/
+
+    .main_area03 {
+        max-width: 100%;
+        height: 100vh;
+        background: #ccc;
+    }
+    /*********************main_area02*****************************/
+    /*******************footer*********************/
+
+    .footer {
+        max-width: 100%;
+        height: 250px;
+        background: #ff931e;
+    }
+
+    .footer_box {
+        margin: 0 auto;
+        width: 1000px;
+        height: 250px;
+        /*  background: #cccccc;*/
+    }
+
+    .footer_left {
+        float: left;
+        padding-top: 40px;
+        width: 350px;
+        height: 250px;
+        /*          background: #666666;
+*/
+    }
+
+    .footer_logo {
+        width: 350px;
+        height: 150px;
+        background: url(images/TREEVAGO_logo.png) no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .footer_menu>ul>li>a {
+        color: white;
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+    }
+
+    .footer_right {
+        float: right;
+        padding-top: 60px;
+        width: 350px;
+        height: 250px;
+        /*          background: #666666;
+*/
+    }
+
+    .white_p {
+        color: white;
+    }
+
+    .footer_info {
+        line-height: 20px;
+        font-family: '微軟正黑體';
+    }
+
+    .footer_icon {
+        height: 80px;
+        padding-top: 15px;
+    }
+
+    .footer_last {
+        font-weight: bold;
+        font-family: '微軟正黑體';
+        font-size: 14px;
+    }
+
+    .footer_icon>ul>li>a {
+        float: left;
+        width: 30px;
+        height: 30px;
+        /*  background: #cccccc;*/
+        margin-right: 10px;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+
+    .footer_icon_last {
+        margin-left: 80px;
+    }
+    /********************************footer************************************/
+
+    #gotop {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+    }
+
+    #gotop img {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .car_img,
+    .train_img {
+        transform-style: preserve-3d;
+        transition: all .7s;
+    }
+
+    .active {
+        transform: rotateY(360deg);
+    }
+
+    h3,
+    .container p {
+        line-height: 30px;
+    }
+
+    h1,
+    h3,
+    h4,
+    .container p,
+    .footer_last p {
+        color: #333333;
+    }
+
+    .cont_li {
+        display: none;
+        list-style: none;
+    }
+
+    .crh3::after {
+        content: "羅東火車站 – Treevago";
+        font-size: 16px;
+    }
+
+    .bg1 {
+        margin: 0 auto;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .bg1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 1180px;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        left: 340px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: #666666;
+    }
+
+    .cont_top {
+        max-width: 100%;
+        width: 590px;
+        position: relative;
+        left: 50%;
+        margin: 20px 0 60px 0;
+    }
+
+    .cont1 {
+        max-width: 100%;
+        height: 380px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .cont2 {
+        height: 630px;
+        margin-top: 80px;
+    }
+
+    .cont1_left {
+        float: left;
+        width: 220px;
+        height: 90px;
+        font-size: 24px;
+        line-height: 35px;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .cont_icon {
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 240px;
+        height: 90px;
+        position: relative;
+    }
+
+    .container .cont_icon::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 20px;
+        1 top: 44.5px;
+        width: calc(100% - 40px);
+        height: 1px;
+        background: #666666;
+    }
+
+    i {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 90px;
+        background: #ff931e;
+        border-radius: 50%;
+    }
+
+    .cont_right {
+        float: left;
+        width: 720px;
+        height: 380px;
+    }
+
+    @media screen and (max-width:1180px) {
+        .container::before {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:900px) {
+        .cont_top {
+            max-width: 100%;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 60px;
+            left: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 100%;
+            width: 1180px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .cont1 {
+            max-width: 100%;
+            height: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+        .cont_li {
+            max-width: 80%;
+            margin: 0 auto;
+            height: 1px;
+            border: solid 1px #666666;
+            list-style: none;
+            display: block;
+        }
+        .cont2 {
+            height: 1000px;
+            margin-top: 80px;
+        }
+        .cont1_left {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+        .cont_icon {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 90px;
+            position: relative;
+        }
+        .container .cont_icon::before {
+            display: none;
+        }
+        .cont_right {
+            float: left;
+            width: 100%;
+            margin: 20px 0 20px 0;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width:620px) {
+        #gotop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width:545px) {
+        .cont1 {
+            max-width: 100%;
+            height: 800px;
+            margin: 0 auto;
+            display: block;
+        }
+        .cont2 {
+            height: 1200px;
+            margin-top: 80px;
+        }
+    }
+    /***************************footer_rwd*************************************/
+
+    @media only screen and (max-width:1250px) {
+
+        .footer {
+            max-width: 100%;
+            height: 350px;
+            background: #ff931e;
+        }
+        .footer_box {
+            margin: 0 auto;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            /*  background: #cccccc;*/
+        }
+        .footer_logo {
+            margin: 0 auto;
+            width: 200px;
+            object-fit: contain;
+        }
+        .footer_left {
+            margin: 0 auto;
+            float: none;
+            padding-top: 40px;
+            width: 200px;
+            height: 100px;
+            /*          background: #666666;
+        */
+        }
+        .footer_right {
+            margin: 0 auto;
+            float: none;
+            padding-top: 60px;
+            width: 100%;
+            height: 200px;
+            /*          background: #666666;
+*/
+        }
+        .footer_info {
+            margin: 0 auto;
+            width: 280px;
+        }
+        .footer_icon {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+
+        .footer_icon>ul>li>a {
+            padding: 10px;
+            float: left;
+            width: 30px;
+            height: 30px;
+            /*  background: #cccccc;*/
+            border-radius: 3px;
+            object-fit: cover;
+        }
+        .footer_menu {
+            display: none;
+        }
+        .footer_icon_last {
+            margin-left: 80px;
+        }
+        .footer_last {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /***************************footer_rwd*************************************/
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="main_menu">
+            <div class="logo"></div>
+            <div class="menu_01">
+                <ul class="clearfix">
+                    <li><a href="">房型介紹</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">Family</a></li>
+                            <li><a class="sub_transition" href="">School</a></li>
+                            <li><a class="sub_transition" href="">Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="transition" href="">課程介紹</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">Family</a></li>
+                            <li><a class="sub_transition" href="">School</a></li>
+                            <li><a class="sub_transition" href="">Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="transition" href="">園區總覽</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">Family</a></li>
+                            <li><a class="sub_transition" href="">School</a></li>
+                            <li><a class="sub_transition" href="">Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">天氣資訊</a>
+                    </li>
+                    <li class="booking"><a href="">線上訂房    </a></li>
+                </ul>
+            </div>
+            <!--menu_01-->
+            <div class="bar_box transition">
+                <div class="bar bar1 transition"></div>
+                <div class="bar bar2 transition"></div>
+                <div class="bar bar3 transition"></div>
+                <ul class="menu_page transition">
+                    <li class="menu_page_li"><a href="">房型介紹</a></li>
+                    <li class="menu_page_li"><a href="">課程介紹</a></li>
+                    <li class="menu_page_li"><a href="">園區總覽</a></li>
+                    <li class="menu_page_li"><a href="">天氣資訊</a></li>
+                    <li class="menu_page_li"><a href="">線上訂房</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--navbar-->
+    <div class="bg1"><img src=images/T0-02.png alt=""></div>
+    <div class="cont_top">
+        <h1>探索森林<br>從Treevago開始！</h1></div>
+    <div class="container">
+        <div class="cont1">
+            <div class="cont1_left">
+                <h4>搭乘火車或客運至<br>羅東車站</h4></div>
+            <div class="cont_icon"><i class="card1 transition"><img  class="train_img"src=images/icon_train.png alt="icon_train"></i></div>
+            <div class="cont_right">
+                <h3>【大眾交通工具】</h3>
+                <p>1.從台北搭乘火車至羅東火車站， 車程約1.5～2小時。【臺灣鐵路管理局】
+                    <br> 2.從台北轉運站搭乘客運。車程約50分鐘~1.5小時。【葛瑪蘭汽車客運時刻表】
+                </p>
+                <br>
+                <h3 class="crh3">【飯店接駁服務】</h3>
+                <p>Treevago免費提供，每日一班，座位有限，建議可提早向飯店預訂。</p>
+                <br>
+                <p>《時刻表》
+                    <br> 羅東車站→Treevago發車時間 (往Treevago) ：13:50　抵達時間約 16:00
+                    <br> Treevago →羅東車站發車時間 (往宜蘭) ：11:00　抵達時間約 13:10
+                    <br>*抵達時間依當日路況為準。
+                    <br>*接駁車上車處：羅東後火車站口</p>
+            </div>
+        </div>
+        <li class="cont_li"></li>
+        <div class="cont1 cont2">
+            <div class="cont1_left">
+                <h4>自行開車</h4></div>
+            <div class="cont_icon"><i class="card transition"><img class="car_img" src=images/icon_car.png alt="icon_train"></i></div>
+            <div class="cont_right">
+                <h3>從基隆：</h3>
+                <p>基隆→省道台2線(濱海公路) →壯圍→省道台7線→省道台7甲線(3.7K)
+                    <br>→宜專1線→土場→鳩之澤→太平山→Treevago
+                </p>
+                <br>
+                <h3>從台北：</h3>
+                <p>(1.) 台北→國道5號→宜蘭(交流道)→省道台7線→省道台7甲線(3.7K)
+                    <br>→宜專1線→土場→鳩之澤→太平山→Treevago
+                    <br>
+                    <br>(2.) 台北→國道5號→羅東(交流道)→省道台7丙線→省道台7線→
+                    <br>省道台7甲線(3.7K)→宜專1線→土場→鳩之澤→太平山→Treevago
+                    <br>
+                    <br>(3.) 台北→省道台9線(北宜公路)→頭城鎮→宜蘭市→省道台7線→
+                    <br>省道台7甲線(3.7K)→宜專1線→土場→鳩之澤→太平山→Treevago</p>
+                <br>
+                <h3>從桃園：</h3>
+                <p>桃園→大溪→省道台7線(北橫公路)→省道台7甲線(3.7K)→宜專1線→土場→鳩之澤→太平山→Treevago</p>
+                <br>
+                <h3>從花蓮：</h3>
+                <p>花蓮→省道台9線(蘇花公路)→省道台7丙線→省道台7線→省道台7甲線(3.7K)
+                    <br>→宜專1線→土場→鳩之澤→太平山→Treevago</p>
+                <br>
+            </div>
+        </div>
+    </div>
+    <!--container-->
+    <div class="footer">
+        <div class="footer_box">
+            <div id="gotop"><img src="images/go_top.svg" alt=""></div>
+            <div class="footer_left">
+                <div class="footer_logo"></div>
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="">訂房須知</a></li>
+                        <li><a href="">親子課程</a></li>
+                        <li><a href="">園區總覽</a></li>
+                        <li><a href="">天氣資訊</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_right">
+                <div class="footer_info white_p">
+                    <p>T : 08-886-2345 F : 08-886-2222</p>
+                    <p>Add:宜蘭縣大同鄉太平村太平巷58號</p>
+                    <p>Email:Treevago@treevago.com.tw</p>
+                </div>
+                <div class="footer_icon">
+                    <ul>
+                        <li><a href=""><img src="images/line.png" alt="" width="30px"></a></li>
+                        <li><a href=""><img src="images/line-02.png" alt="" width="30px"></a></li>
+                        <li><a href=""><img src="images/note.png" alt="" width="110px" class="cooking_logo"></a></li>
+                        <li><a href=""><img src="images/note.png" alt="" width="110px" class="cooking_logo footer_icon_last"></a></li>
+                    </ul>
+                </div>
+                <div class="footer_last">
+                    <p>@ 2017 Treevago Co.Ltd All right reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <!---*************************script*********************************-->
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(".bar_box").click(function() {
+        $(this).toggleClass("nav_active");
+    });
+    </script>
+    <script>
+    $(".bar_box").click(function() {
+        $(".menu_page").toggleClass("nav_active");
+    });
+    </script>
+    <script>
+    $(".card").hover(function() {
+        $(".car_img").toggleClass("active");
+    });
+    $(".card1").hover(function() {
+        $(".train_img").toggleClass("active");
+    });
+    $("#gotop").click(function() {
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+    </script>
+    <!---*************************script*********************************-->
+</body>
+
+</html>

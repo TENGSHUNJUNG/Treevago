@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>餐廳資訊</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,800,400' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/ico" href="images/Logo_02.png" />
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: '微軟正黑體', calibri;
+        background: url(images/bg_main.jpg) repeat 0 0;
+    }
+
+    ul>li {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    .clearfix:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    .container {
+        max-width: 100%;
+        background: url(images/bg_main.jpg) repeat 0 0;
+    }
+
+    h2 {
+        line-height: 60px;
+    }
+    /********************nav_bar*********************/
+
+    .nav {
+        max-width: 100%;
+        height: 120px;
+        background: #ff931e;
+    }
+
+    .main_menu {
+        max-width: 1180px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 180px;
+        height: 100px;
+        background: url(images/TREEVAGO_logo.png) no-repeat 0 0;
+        background-size: contain;
+        float: left;
+        margin-top: 20px;
+    }
+
+    .menu_01>ul>li {
+        width: 120px;
+        text-align: center;
+        float: left;
+    }
+
+    .menu_01>ul>li>a {
+        color: white;
+        text-decoration: none;
+        font-family: '微軟正黑體';
+        /*margin-left: 20px;*/
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .menu_01 {
+        position: relative;
+        float: right;
+        margin-top: 79px;
+    }
+
+    .booking {
+        margin-left: 80px;
+    }
+
+    .bar_box {
+        display: none;
+    }
+    /******************nav_bar***********************/
+    /*********************nav_rwd************************/
+
+    @media only screen and (max-width:1250px) {
+        /*      .menu_page{
+                        padding: 0;
+                        margin:0; 
+                        background:rgba(0,0,0,.3);
+                        z-index: 103;
+                        width: 100%;
+                        height: 500px;
+                        text-align:center; 
+                    }
+                    .menu_page_li>a{
+                        line-height: 80px;
+                        font-size: 36px;
+                        color: #fff;
+                        float: none;
+                        display: block;
+                    }*/
+        .menu_01 {
+            display: none;
+        }
+        .header {
+            width: 100%;
+            /*  height: 180px;*/
+            height: 80px;
+            background: rgba(0, 0, 0, .5);
+        }
+        .logo {
+            width: 200px;
+            height: 80px;
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            margin: 10px 0 0 -80px;
+        }
+        .menu_page {
+            position: absolute;
+            right: 0;
+            top: 119px;
+            width: 100%;
+            text-align: center;
+            z-index: 999;
+            display: block;
+            opacity: 0;
+            max-height: 0px;
+            overflow: hidden;
+        }
+        .menu_page_li>a {
+            background: #ff931e;
+            line-height: 100px;
+            font-size: 18px;
+            color: #fff;
+            float: none;
+            display: block;
+            text-decoration: none;
+        }
+        .menu_page_li>a:hover {
+            background: #ffaa1e;
+        }
+        .bar_box {
+            float: right;
+            /*position: absolute;
+                        top:10%;*/
+            margin-top: 70px;
+            cursor: pointer;
+            display: block;
+        }
+        .nav_active .bar1 {
+            transform: rotate(-45deg) translate(-9px, 7px);
+        }
+        .nav_active .bar2 {
+            opacity: 0;
+        }
+        .nav_active .bar3 {
+            transform: rotate(45deg) translate(-9px, -8px);
+        }
+        .bar {
+            width: 36px;
+            height: 6px;
+            background: #ccc;
+            margin: 6px 10px;
+            border-radius: 3px;
+        }
+        .bar_box .nav_active {
+            opacity: 1;
+            max-height: 500px;
+        }
+        .transition {
+            transition: all .5s;
+        }
+    }
+    /****************main-nav************************/
+    /*******************sub_nav*************************/
+
+    .menu_01>ul>li:hover .sub_nav {
+        max-height: 1000px;
+    }
+
+    .sub_nav {
+
+        position: absolute;
+        background: #ff931e;
+        top: 41px;
+        width: 120px;
+        overflow: hidden;
+        max-height: 0px;
+    }
+
+    .sub_nav a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 10px;
+        display: block;
+    }
+
+    .sub_nav a:hover {
+        background: #ffaa1e;
+    }
+
+    .sub_transition {
+        transition: .5s;
+    }
+    /********************sub_nav***********************/
+    /*********************main_area01*****************************/
+
+    .classtxt_01>h2 {
+        color: #333333;
+    }
+
+    .bg1 {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .bg1 img {
+        margin: -1px auto 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container {
+        max-width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .classtxt_01 {
+
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .cont2 {
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        z-index: 3;
+    }
+    .cont2 a{
+        border:0px;
+        text-decoration:none; 
+    }
+
+    .cont2-1,
+    .cont2-2,
+    .cont2-3,
+    .cont2-4 {
+        float: left;
+        margin-right: 20px;
+        max-width: 100%;
+    }
+
+    .cont2-1 {
+        margin-top: 300px;
+    }
+
+    .cont2-2 {
+        margin-top: 200px;
+        margin-bottom: 100px;
+    }
+
+    .cont2-3 {
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
+
+    .cont2-4 {
+        margin-bottom: 300px;
+        margin-right: 0;
+    }
+
+    .cont2-1 img,
+    .cont2-2 img,
+    .cont2-3 img,
+    .cont2-4 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .txtcontrol {
+        width: 300px;
+        height: 600px;
+        position: absolute;
+        left: 170px;
+        top: 100px;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .footer_block {
+        height: 300px;
+    }
+
+    .cont3 {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .cont3>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .h2_border {
+        border-bottom: 1px solid #000000;
+    }
+
+    p {
+        color: #666666;
+    }
+    /*----------HOVER效果區-----------------------*/
+
+    .cont2-relative {
+        position: relative;
+    }
+
+    .conthover {
+        opacity: 0;
+    }
+
+    .figure2-1:hover img.apear {
+        opacity: 1;
+    }
+
+    .figure2-2:hover img.apear {
+        opacity: 1;
+    }
+
+    .figure2-3:hover img.apear {
+        opacity: 1;
+    }
+
+    .figure2-4:hover img.apear {
+        opacity: 1;
+    }
+
+    .figure2-1 {
+        position: absolute;
+        left: 0px;
+        top: 301px;
+        max-width: 381px;
+        max-height: 876px;
+    }
+
+    .figure2-2 {
+        position: absolute;
+        left: 401px;
+        top: 205px;
+        max-width: 381px;
+        max-height: 876px;
+    }
+
+    .figure2-3 {
+        position: absolute;
+        left: 801px;
+        top: 104px;
+        max-width: 381px;
+        max-height: 876px;
+    }
+
+    .figure2-4 {
+        position: absolute;
+        left: 1201px;
+        top: 1px;
+        max-width: 381px;
+        max-height: 876px;
+    }
+
+    .figure2-1>img,
+    .figure2-2>img,
+    .figure2-3>img,
+    .figure2-4>img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .transition {
+        transition: all 1s;
+    }
+
+    .rwd_txt {
+        display: none;
+    }
+    /**-----------------請讓他在最上層-----------------------------*/
+
+    .circle {
+        width: 650px;
+        height: 600px;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: absolute;
+        left: 490px;
+        top: -300px;
+        background: url(images/bg_main.jpg) repeat 0 0;
+        z-index: 8;
+    }
+
+    .circle_relative {
+        position: relative;
+    }
+    /*********************main_area01*****************************/
+    /*********************main_area01_rwd*****************************/
+
+    @media screen and (max-width:525px) {
+
+        .p1 {
+            display: none;
+        }
+        .cont2 {
+            padding-top: 50px;
+            max-width: 100%;
+            height: 950px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+        .cont2-1 {
+            width: 47%;
+            margin: 24px 15px 430px 0;
+        }
+        .cont2-2 {
+            width: 47%;
+            margin: -19px 0 480px 0;
+        }
+        .cont2-3 {
+            width: 47%;
+            margin: -399px 15px 800px 0;
+        }
+        .cont2-4 {
+            width: 47%;
+            margin: -449px 0 850px 0;
+        }
+
+        h4 {
+            align-self: flex-start;
+        }
+        .circle {
+            display: none;
+        }
+
+
+        .txtcontrol {
+            width: 375px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: -300px;
+            text-align: center;
+        }
+        .txtcontrol>p {
+            line-height: 30px;
+            z-index: 10;
+        }
+        .footer_block {
+            height: 80px;
+        }
+        .cont3_margin {
+            margin: 0;
+        }
+        .h2_border {
+            border-bottom: 0 solid #FFFFFF;
+        }
+        .display-b {
+            display: none;
+        }
+        .rwd_txt {
+            display: block;
+        }
+    }
+    /*********************main_area01_rwd*****************************/
+    /*********************main_area02*****************************/
+
+    .main_area02 {
+        max-width: 100%;
+        height: 100vh;
+        background: gray;
+    }
+    /*********************main_area02*****************************/
+    /*********************main_area02*****************************/
+
+    .main_area03 {
+        max-width: 100%;
+        height: 100vh;
+        background: #ccc;
+    }
+    /*********************main_area02*****************************/
+    /*******************footer*********************/
+
+    #gotop {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        z-index: 999;
+    }
+
+    #gotop img {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .footer {
+        max-width: 100%;
+        height: 250px;
+        background: #ff931e;
+    }
+
+    .footer_box {
+        margin: 0 auto;
+        width: 1000px;
+        height: 250px;
+        /*  background: #cccccc;*/
+    }
+
+    .footer_left {
+        float: left;
+        padding-top: 40px;
+        width: 350px;
+        height: 250px;
+        /*          background: #666666;
+*/
+    }
+
+    .footer_logo {
+        width: 350px;
+        height: 150px;
+        background: url(images/TREEVAGO_logo.png) no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .footer_menu>ul>li>a {
+        color: white;
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+    }
+
+    .footer_right {
+        float: right;
+        padding-top: 60px;
+        width: 350px;
+        height: 250px;
+        /*          background: #666666;
+*/
+    }
+
+    .white_p p {
+        color: white;
+        text-align: left;
+    }
+
+    .footer_info {
+        line-height: 20px;
+        font-family: '微軟正黑體';
+    }
+
+    .footer_icon {
+        height: 80px;
+        padding-top: 15px;
+    }
+
+    .footer_last p {
+        font-weight: bold;
+        font-family: '微軟正黑體';
+        font-size: 14px;
+        text-align: left;
+        color: #000000;
+    }
+
+    .footer_icon>ul>li>a {
+        float: left;
+        width: 30px;
+        height: 30px;
+        /*  background: #cccccc;*/
+        margin-right: 10px;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+
+    .footer_icon_last {
+        margin-left: 80px;
+    }
+    /********************************footer************************************/
+
+    #gotop {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+    }
+
+    #gotop img {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    /***************************footer_rwd*************************************/
+
+    @media screen and (max-width:620px) {
+        #gotop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+    }
+
+    @media only screen and (max-width:1250px) {
+
+        .footer {
+            max-width: 100%;
+            height: 350px;
+            background: #ff931e;
+        }
+        .footer_box {
+            margin: 0 auto;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            /*  background: #cccccc;*/
+        }
+        .footer_logo {
+            margin: 0 auto;
+            width: 200px;
+            object-fit: contain;
+        }
+        .footer_left {
+            margin: 0 auto;
+            float: none;
+            padding-top: 40px;
+            width: 200px;
+            height: 100px;
+            /*          background: #666666;
+        */
+        }
+        .footer_right {
+            margin: 0 auto;
+            float: none;
+            padding-top: 60px;
+            width: 100%;
+            height: 200px;
+            /*          background: #666666;
+*/
+        }
+        .footer_info {
+            margin: 0 auto;
+            width: 280px;
+        }
+        .footer_icon {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+
+        .footer_icon>ul>li>a {
+            padding: 10px;
+            float: left;
+            width: 30px;
+            height: 30px;
+            /*  background: #cccccc;*/
+            border-radius: 3px;
+            object-fit: cover;
+        }
+        .footer_menu {
+            display: none;
+        }
+        .footer_icon_last {
+            margin-left: 80px;
+        }
+        .footer_last {
+            width: 380px;
+            margin: 0 auto;
+        }
+        .footer_last>p {
+            text-align: center;
+        }
+
+
+        /***************************footer_rwd*************************************/
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="main_menu">
+            <div class="logo"></div>
+            <div class="menu_01">
+                <ul class="clearfix">
+                    <li><a href="">房型介紹</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">Family</a></li>
+                            <li><a class="sub_transition" href="">School</a></li>
+                            <li><a class="sub_transition" href="">Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="transition" href="">課程介紹</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">Family</a></li>
+                            <li><a class="sub_transition" href="">School</a></li>
+                            <li><a class="sub_transition" href="">Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="transition" href="">園區總覽</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">Family</a></li>
+                            <li><a class="sub_transition" href="">School</a></li>
+                            <li><a class="sub_transition" href="">Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">天氣資訊</a>
+                    </li>
+                    <li class="booking"><a href="">線上訂房    </a></li>
+                </ul>
+            </div>
+            <!--menu_01-->
+            <div class="bar_box transition">
+                <div class="bar bar1 transition"></div>
+                <div class="bar bar2 transition"></div>
+                <div class="bar bar3 transition"></div>
+                <ul class="menu_page transition">
+                    <li class="menu_page_li"><a href="">房型介紹</a></li>
+                    <li class="menu_page_li"><a href="">課程介紹</a></li>
+                    <li class="menu_page_li"><a href="">園區總覽</a></li>
+                    <li class="menu_page_li"><a href="">天氣資訊</a></li>
+                    <li class="menu_page_li"><a href="">線上訂房</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--navbar-->
+    <!--********************************************************navbar***************************************-->
+    <div class="bg1"><img src="restaurant/top2.png" alt=""></div>
+    <div class="container">
+        <div class="classtxt_01">
+            <h2>歡迎蒞臨 Treevago table<br>
+                         主廚：xxxxxx<br>來自俄羅斯<br></h2>
+            <p>盡情享用來自森林的美好料理
+                <br>
+                <br> 我們提供您活力早餐、午、晚餐套餐以及單點服務
+                <br>
+                <br> 由來自俄羅斯的xxx親自掌廚
+                <br>
+                <br> 滿足您味蕾的美味享受
+                <br>
+                <br> 一飽無國界的美食盛宴。
+                <br>
+                <br>
+            </p>
+        </div>
+        <!-- classtxt_01-->
+    </div>
+    <div class="cont2 cont2-relative">
+        <div class="cont2-1 ">
+            <a href="lightbox_img/1.jpg" class="popup-link" data-effect="fadeInLeft">
+                <img src="restaurant/R1.png" alt=""></div>
+                <figure class="figure2-1 display-b">
+            <img class="conthover apear transition" src="restaurant/R1hover.png" alt="">
+            <!-- hover1-->
+            </figure></a>
+
+        <div class="cont2-2">
+            <a href="lightbox_img/2.jpg" class="popup-link" data-effect="bounceInLeft">
+            <img src="restaurant/R2.png" alt=""></div>
+        <figure class="figure2-2 display-b">
+            <img class="conthover apear transition" src="restaurant/R2hover.png" alt="">
+            <!-- hover2-->
+        </figure></a>
+
+        <div class="cont2-3">
+            <a href="lightbox_img/3.jpg" class="popup-link" data-effect="bounceInRight">
+            <img src="restaurant/R3.png" alt=""></div>
+        <figure class="figure2-3 display-b">
+            <img class="conthover apear transition" src="restaurant/R3hover.png" alt="">
+            <!-- hover3-->
+        </figure></a>
+
+        <div class="cont2-4">
+            <a href="lightbox_img/4.png" class="popup-link" data-effect="fadeInRight">
+            <img src="restaurant/R4.png" alt=""></div>
+        <figure class="figure2-4 display-b">
+            <img class="conthover apear transition" src="restaurant/R4hover.png" alt="">
+            <!-- hover4-->
+        </figure></a>
+    </div>
+    <div class="classtxt_01 circle_relative">
+        <div class="rwd_txt">
+            <h2 class="h2_border">主菜</h2>
+            <br>
+            <p>特頂級牛肋排
+                <br> 精選宜蘭櫻桃鴨
+                <br> 法式烤雞
+                <br> 素食總匯
+                <br>
+            </p>
+        </div>
+        <div class="circle">
+            <div class="txtcontrol">
+                <h2 class="h2_border">主菜</h2>
+                <br>
+                <p>特頂級牛肋排
+                    <br> 精選宜蘭櫻桃鴨
+                    <br> 法式烤雞
+                    <br> 素食總匯
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- classtxt_01-->
+    <div class="cont2 cont2-relative">
+        <div class="cont2-1">
+            <a href="lightbox_img/2-1.jpeg" class="popup-link" data-effect="zoomInLeft">
+            <img src="restaurant/R5.png" alt=""></div>
+            <figure class="figure2-1 transition display-b">
+                <img class="conthover apear transition" src="restaurant/R5hover.png" alt="">
+                <!-- hover1-->
+            </figure></a>
+
+        <div class="cont2-2">
+            <a href="lightbox_img/2-2.jpg" class="popup-link" data-effect="zoomIn">
+            <img src="restaurant/R6.png" alt=""></div>
+        <figure class="figure2-2 transition display-b">
+            <img class="conthover apear transition" src="restaurant/R6hover.png" alt="">
+            <!-- ho ver1-->
+        </figure></a>
+
+        <div class="cont2-3">
+            <a href="lightbox_img/2-3.png" class="popup-link" data-effect="zoomIn">
+            <img src="restaurant/R7.png" alt=""></div>
+        <figure class="figure2-3">
+            <img class="conthover apear transition display-b" src="restaurant/R7hover.png" alt="">
+            <!-- hover1-->
+        </figure></a>
+
+        <div class="cont2-4">
+            <a href="lightbox_img/2-4.png" class="popup-link" data-effect="zoomInRight">            
+            <img src="restaurant/R8.png" alt=""></div>
+        <figure class="figure2-4 ">
+            <img class="conthover apear transition display-b" src="restaurant/R8hover.png" alt="">
+            <!-- hover1-->
+            <!-- hover1-->
+        </figure></a>
+    </div>
+
+
+    <div class="classtxt_01 circle_relative">
+        <div class="rwd_txt">
+            <h2 class="h2_border">主廚濃湯</h2>
+            <br>
+            <p>南瓜濃湯
+                <br> 蔬菜清湯
+                <br> 辣培根玉米濃湯
+                <br> 蘑菇清湯
+                <br>
+            </p>
+        </div>
+        <div class="circle">
+            <div class="txtcontrol">
+                <h2 class="h2_border">主廚濃湯</h2>
+                <br>
+                <p>南瓜濃湯
+                    <br> 蔬菜清湯
+                    <br> 辣培根玉米濃湯
+                    <br> 蘑菇清湯
+                    <br>
+                </p>
+            </div>
+        </div>
+        <!-- classtxt_01-->
+    </div>
+    <div class="cont3_margin">
+        <div class="cont3"><img src="restaurant/R9.png" alt=""></div>
+    </div>
+    <div class="classtxt_01 circle_relative">
+        <div class="rwd_txt">
+            <h2 class="h2_border">新鮮生菜沙拉吧</h2>
+            <br>
+            <p>小黃瓜
+                <br> 彩椒
+                <br> 牛番茄
+                <br> 紅蘿蔔美生菜
+                <br> 無限量供應
+                <br>
+            </p>
+        </div>
+        <div class="circle">
+            <div class="txtcontrol">
+                <h2 class="h2_border">新鮮生菜沙拉吧</h2>
+                <br>
+                <p>小黃瓜
+                    <br> 彩椒
+                    <br> 牛番茄
+                    <br> 紅蘿蔔美生菜
+                    <br> 無限量供應
+                    <br>
+                </p>
+            </div>
+            <!-- classtxt_01-->
+        </div>
+        <div class="cont2 ">
+            <div class="cont2-1 ">
+                <a href="lightbox_img/3-1.png" class="popup-link" data-effect="fadeInLeft"> 
+                <img src="restaurant/R10.png" alt=""></div>
+            <figure class="figure2-1 ">
+                <img class="conthover apear transition display-b" src="restaurant/h_cake.png" alt="">
+            <!-- hover1-->
+            </figure></a>
+
+            <div class="cont2-2">
+                <a href="lightbox_img/3-2.png" class="popup-link" data-effect="fadeInDown""> 
+                <img src="restaurant/R11.png" alt=""></div>
+                <figure class="figure2-2 ">
+                <img class="conthover apear transition display-b" src="restaurant/h_cake.png" alt="">
+            <!-- hover1-->
+            </figure></a>
+
+            <div class="cont2-3">
+                <a href="lightbox_img/3-3.png" class="popup-link" data-effect="fadeInUp"> 
+                <img src="restaurant/R12.png" alt=""></div>
+                <figure class="figure2-3 ">
+                <img class="conthover apear transition display-b" src="restaurant/h_cake.png" alt="">
+            <!-- hover1-->
+            </figure></a>
+
+            <div class="cont2-4">
+                <a href="lightbox_img/3-4.png" class="popup-link" data-effect="fadeInRight"> 
+                <img src="restaurant/R13.png" alt=""></div>
+                <figure class="figure2-4 ">
+                <img class="conthover apear transition display-b" src="restaurant/h_cake.png" alt="">
+            <!-- hover1-->
+            </figure></a>
+        </div>
+
+        <div class="classtxt_01 circle_relative">
+            <div class="rwd_txt">
+                <h2 class="h2_border">甜點</h2>
+                <br>
+                <p>巧克力千層
+                    <br> 莓果蛋糕
+                    <br> 堅果千層
+                    <br> 巧克力派
+                    <br>
+                </p>
+            </div>
+            <div class="circle">
+                <div class="txtcontrol">
+                    <h2 class="h2_border">甜點</h2>
+                    <br>
+                    <p>巧克力千層
+                        <br> 莓果蛋糕
+                        <br> 堅果千層
+                        <br> 巧克力派
+                        <br>
+                    </p>
+                </div>
+                <!-- classtxt_01-->
+            </div>
+            <div class="footer_block"></div>
+            <!--****************************************************footer*******************************************-->
+            <div class="footer">
+                <div class="footer_box">
+                    <div id="gotop"><img src="images/go_top.svg" alt=""></div>
+                    <div class="footer_left">
+                        <div class="footer_logo"></div>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="">訂房須知</a></li>
+                                <li><a href="">親子課程</a></li>
+                                <li><a href="">園區總覽</a></li>
+                                <li><a href="">天氣資訊</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_right">
+                        <div class="footer_info white_p">
+                            <p>T : 08-886-2345 F : 08-886-2222</p>
+                            <p>Add:宜蘭縣大同鄉太平村太平巷58號</p>
+                            <p>Email:Treevago@treevago.com.tw</p>
+                        </div>
+                        <div class="footer_icon">
+                            <ul>
+                                <li><a href=""><img src="images/line.png" alt="" width="30px"></a></li>
+                                <li><a href=""><img src="images/line-02.png" alt="" width="30px"></a></li>
+                                <li><a href=""><img src="images/note.png" alt="" width="110px" class="cooking_logo"></a></li>
+                                <li><a href=""><img src="images/note.png" alt="" width="110px" class="cooking_logo footer_icon_last"></a></li>
+                            </ul>
+                        </div>
+                        <div class="footer_last">
+                            <p>@ 2017 Treevago Co.Ltd All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--footer-->
+            <!--************************script************************-->
+            <script src="js/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/jquery.magnific-popup.min.js"></script>
+            <!--************************script************************-->
+            <!--****************************nav_rwd(script)*****************************-->
+            <script>
+            $(".bar_box").click(function() {
+                $(this).toggleClass("nav_active");
+            });
+            </script>
+            <script>
+            $(".bar_box").click(function() {
+                $(".menu_page").toggleClass("nav_active");
+            });
+            $("#gotop").click(function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 700);
+            });
+
+
+            $(document).ready(function() {
+
+                $('.popup-link').magnificPopup({
+                    removalDelay: 300,
+                    type: 'image',
+                    callbacks: {
+                        beforeOpen: function() {
+                            this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure animated ' + this.st.el.attr('data-effect'));
+                        }
+                    },
+                });
+
+            });
+            </script>
+            <!--****************************nav_rwd*****************************-->
+</body>
+
+</html>

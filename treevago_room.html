@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/ico" href="images/Logo_02.png" />
+    <link rel="stylesheet" href="css/room_hover.css">
+    <link rel="stylesheet" href="css/room_hover2.css">
+    <link rel="stylesheet" href="css/room_hover3.css">
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: '微軟正黑體', calibri;
+        background: url(images/bg_main.jpg) repeat 0 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul>li {
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    .clearfix:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+    /********************nav_bar*********************/
+
+    .nav {
+        max-width: 100%;
+        height: 120px;
+        background: #ff931e;
+    }
+
+    .main_menu {
+        max-width: 1180px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 180px;
+        height: 100px;
+        background: url(images/TREEVAGO_logo.png) no-repeat 0 0;
+        background-size: contain;
+        float: left;
+        margin-top: 20px;
+    }
+
+    .menu_01>ul>li {
+        width: 120px;
+        text-align: center;
+        float: left;
+    }
+
+    .menu_01>ul>li>a {
+        color: white;
+        text-decoration: none;
+        font-family: '微軟正黑體';
+        /*margin-left: 20px;*/
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .menu_01 {
+        position: relative;
+        float: right;
+        margin-top: 79px;
+    }
+
+    .booking {
+        margin-left: 80px;
+    }
+
+    .bar_box {
+        display: none;
+    }
+    /******************nav_bar***********************/
+    /*********************nav_rwd************************/
+
+    @media only screen and (max-width:1250px) {
+        /*      .menu_page{
+                        padding: 0;
+                        margin:0; 
+                        background:rgba(0,0,0,.3);
+                        z-index: 103;
+                        width: 100%;
+                        height: 500px;
+                        text-align:center; 
+                    }
+                    .menu_page_li>a{
+                        line-height: 80px;
+                        font-size: 36px;
+                        color: #fff;
+                        float: none;
+                        display: block;
+                    }*/
+        .menu_01 {
+            display: none;
+        }
+        .header {
+            width: 100%;
+            /*  height: 180px;*/
+            height: 80px;
+            background: rgba(0, 0, 0, .5);
+        }
+        .logo {
+            width: 200px;
+            height: 80px;
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            margin: 10px 0 0 -80px;
+        }
+        .menu_page {
+            position: absolute;
+            right: 0;
+            top: 120px;
+            width: 100%;
+            text-align: center;
+            z-index: 999;
+            display: block;
+            opacity: 0;
+            max-height: 0px;
+            overflow: hidden;
+        }
+        .menu_page_li>a {
+            background: #ff931e;
+            line-height: 100px;
+            font-size: 18px;
+            color: #fff;
+            float: none;
+            display: block;
+            text-decoration: none;
+        }
+        .menu_page_li>a:hover {
+            background: #ffaa1e;
+        }
+        .bar_box {
+            float: right;
+            /*position: absolute;
+                        top:10%;*/
+            margin-top: 70px;
+            cursor: pointer;
+            display: block;
+        }
+        .nav_active .bar1 {
+            transform: rotate(-45deg) translate(-9px, 7px);
+        }
+        .nav_active .bar2 {
+            opacity: 0;
+        }
+        .nav_active .bar3 {
+            transform: rotate(45deg) translate(-9px, -8px);
+        }
+        .bar {
+            width: 36px;
+            height: 6px;
+            background: #ccc;
+            margin: 6px 10px;
+            border-radius: 3px;
+        }
+        .bar_box .nav_active {
+            opacity: 1;
+            max-height: 500px;
+        }
+        .transition {
+            transition: all .5s;
+        }
+    }
+    /****************main-nav************************/
+    /*******************sub_nav*************************/
+
+    .menu_01>ul>li:hover .sub_nav {
+        max-height: 1000px;
+    }
+
+    .sub_nav {
+
+        position: absolute;
+        background: #ff931e;
+        top: 41px;
+        width: 120px;
+        overflow: hidden;
+        max-height: 0px;
+    }
+
+    .sub_nav a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 10px;
+        display: block;
+    }
+
+    .sub_nav a:hover {
+        background: #ffaa1e;
+    }
+
+    .sub_transition {
+        transition: .5s;
+    }
+    /********************sub_nav***********************/
+
+    .h1_div {
+        width: 100%;
+        height: 135px;
+        margin: 0 auto;
+    }
+
+    .h1_div h1 {
+        text-align: center;
+        line-height: 170px;
+    }
+    /*********************main_area01*****************************/
+
+    .container {
+        width: 1180px;
+        max-width: 100%;
+        margin: 0 auto;
+        /*border: solid 1px #000;*/
+    }
+
+    .room1 {
+        width: 100%;
+        height: 260px;
+        background-color: #f2f2f2;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .room1_left {
+        width: 550px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .room1_img {
+        width: 445px;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .room1_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .room1_right {
+        width: 550px;
+        height: 220px;
+    }
+
+    .room1_right_price {
+        float: right;
+        margin-top: 60px;
+        margin-right: 10px;
+        color: #333333;
+    }
+
+    .room1_right_price b {
+        font-size: 30px;
+        color: #E01800;
+    }
+
+    .room1_p,
+    h4,
+    h3 {
+        line-height: 30px;
+    }
+
+    .room1_p,
+    h4 {
+        color: #348631;
+    }
+
+    h3 {
+        color: #333333;
+    }
+
+    .room1_p1 {
+        font-size: 14px;
+        color: #666666;
+    }
+
+    .room1_button {
+        margin-top: 20px;
+        margin-right: 10px;
+        border-radius: 20px;
+        border: 1px solid #ff931e;
+        float: right;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .room1_button a {
+        color: #333333;
+        padding: 15px 30px;
+    }
+
+    .room1_button:hover {
+        background-color: #ff931e;
+        transition: all .5s;
+    }
+
+    .room1_button:hover a {
+        color: #fff;
+        transition: all .5s;
+    }
+
+    .display_none {
+        display: none;
+    }
+    /*********************main_area01*****************************/
+    /*********************main_area02*****************************/
+
+    .room2 {
+        background-color: rgba(0, 0, 0, 0);
+        margin-top: 76px;
+        flex-direction: row-reverse;
+    }
+
+    .room2_right {
+        justify-content: flex-start;
+    }
+
+    .room2_left {
+        width: 450px;
+    }
+
+    .room2_left_box {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .room3 {
+        margin-top: 76px;
+    }
+
+    .room4 {
+        margin-bottom: 76px;
+    }
+
+    #gotop {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+    }
+
+    #gotop img {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    /*********************main_area02*****************************/
+    /*******************content-rwd*********************/
+
+    @media only screen and (max-width:1120px) {
+        .room1 {
+            width: 80%;
+            height: 500px;
+            justify-content: center;
+        }
+        .room1_left {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+        }
+        .room2_left {
+            width: 550px;
+        }
+        .room2_left_box {
+            justify-content: center;
+            align-items: center;
+        }
+        .snip0019 {
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (max-width:650px) {
+        .room1 {
+            height: 500px;
+        }
+        .room1_right {
+            margin-top: -50px;
+        }
+        .room1_img {
+            width: 80%;
+            height: auto;
+        }
+        .room1_left {
+            display: flex;
+            justify-content: center;
+        }
+        .room2_left {
+            width: 100%;
+        }
+        .snip1401,
+        .snip1206 {
+            display: none;
+        }
+        .display_none {
+            display: block;
+            margin: 0 auto;
+        }
+        .snip0019 {
+            background-color: #f2f2f2;
+            float: none;
+        }
+        figcaption {
+            display: none;
+        }
+        .snip0019:hover img {
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width:620px) {
+        #gotop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+    }
+    /*******************footer*********************/
+
+    .footer {
+        max-width: 100%;
+        height: 250px;
+        background: #ff931e;
+    }
+
+    .footer_box {
+        margin: 0 auto;
+        width: 1000px;
+        height: 250px;
+        /*  background: #cccccc;*/
+    }
+
+    .footer_left {
+        float: left;
+        padding-top: 40px;
+        width: 350px;
+        height: 250px;
+        /*          background: #666666;
+*/
+    }
+
+    .footer_logo {
+        width: 350px;
+        height: 150px;
+        background: url(images/TREEVAGO_logo.png) no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .footer_menu>ul>li>a {
+        color: white;
+        text-decoration: none;
+        float: left;
+        padding: 10px;
+    }
+
+    .footer_right {
+        float: right;
+        padding-top: 60px;
+        width: 350px;
+        height: 250px;
+        /*          background: #666666;
+*/
+    }
+
+    .white_p {
+        color: white;
+    }
+
+    .footer_info {
+        line-height: 20px;
+        font-family: '微軟正黑體';
+    }
+
+    .footer_icon {
+        height: 80px;
+        padding-top: 15px;
+    }
+
+    .footer_last {
+        font-weight: bold;
+        font-family: '微軟正黑體';
+        font-size: 14px;
+    }
+
+    .footer_icon>ul>li>a {
+        float: left;
+        width: 30px;
+        height: 30px;
+        /*  background: #cccccc;*/
+        margin-right: 10px;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+
+    .footer_icon_last {
+        margin-left: 80px;
+    }
+    /********************************footer************************************/
+    /***************************footer_rwd*************************************/
+
+    @media only screen and (max-width:1250px) {
+
+        .footer {
+            max-width: 100%;
+            height: 350px;
+            background: #ff931e;
+        }
+        .footer_box {
+            margin: 0 auto;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            /*  background: #cccccc;*/
+        }
+        .footer_logo {
+            margin: 0 auto;
+            width: 200px;
+            object-fit: contain;
+        }
+        .footer_left {
+            margin: 0 auto;
+            float: none;
+            padding-top: 40px;
+            width: 200px;
+            height: 100px;
+            /*          background: #666666;
+        */
+        }
+        .footer_right {
+            margin: 0 auto;
+            float: none;
+            padding-top: 60px;
+            width: 100%;
+            height: 200px;
+            /*          background: #666666;
+*/
+        }
+        .footer_info {
+            margin: 0 auto;
+            width: 280px;
+        }
+        .footer_icon {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+
+        .footer_icon>ul>li>a {
+            padding: 10px;
+            float: left;
+            width: 30px;
+            height: 30px;
+            /*  background: #cccccc;*/
+            border-radius: 3px;
+            object-fit: cover;
+        }
+        .footer_menu {
+            display: none;
+        }
+        .footer_icon_last {
+            margin-left: 80px;
+        }
+        .footer_last {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /***************************footer_rwd*************************************/
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="main_menu">
+            <div class="logo"></div>
+            <div class="menu_01">
+                <ul class="clearfix">
+                    <li><a href="">房型介紹</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">BONBIBI</a></li>
+                            <li><a class="sub_transition" href="">BURL</a></li>
+                            <li><a class="sub_transition" href="">NEST</a></li>
+                            <li><a class="sub_transition" href="">TRILLIUN</a></li>
+                            <li><a class="sub_transition" href="">TEMPO</a></li>
+                            <li><a class="sub_transition" href="">CEDAR</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="transition" href="">課程介紹</a>
+                        <ul class="sub_nav sub_transition">
+                            <li><a class="sub_transition" href="">捏捏塗鴉課</a></li>
+                            <li><a class="sub_transition" href="">小孩陶土課</a></li>
+                            <li><a class="sub_transition" href="">藝術美感培養</a></li>
+                            <li><a class="sub_transition" href="">親子藝術遊戲</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="transition" href="">園區總覽</a>
+                        <?php if(isset($_SESSION['user'])): ?>
+                        <li class="booking"><a href="">歡迎:<?= $_SESSION['user']['name'] ?></a></li>
+                        <li class="booking2"><a href="logout.php">登出</a></li>
+                        <?php else: ?>
+                    </li>
+                    <li class="booking <?= $page_name=='login' ? 'active' : '' ?>"><a href="login.php">登入</a></li>
+                    <li class="booking2 <?= $page_name=='register' ? 'active' : '' ?>"><a href="register.php">註冊</a></li>
+                </ul>
+                <?php endif; ?>
+            </div>
+            <!--menu_01-->
+            <div class="bar_box transition">
+                <div class="bar bar1 transition"></div>
+                <div class="bar bar2 transition"></div>
+                <div class="bar bar3 transition"></div>
+                <ul class="menu_page transition">
+                    <li class="menu_page_li"><a href="">房型介紹</a></li>
+                    <li class="menu_page_li"><a href="">課程介紹</a></li>
+                    <li class="menu_page_li"><a href="">園區總覽</a></li>
+                    <li class="menu_page_li"><a href="">天氣資訊</a></li>
+                    <li class="menu_page_li"><a href="">線上訂房</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--navbar-->
+    <!--********************************************************navbar***************************************-->
+    <div class="h1_div">
+        <h1>房型介紹</h1></div>
+    <div class="container">
+        <div class="room1">
+            <div class="room1_left">
+                <a href="">
+                    <div class="room1_img snip1401">
+                        <img src="images/1.png" alt="">
+                        <figcaption>
+                            <h3>Bonbibi</h3>
+                            <p>房內穿插的暖色調元素低調內斂，不經意地讓彼此心中最真的情感在此流露，溫馨的空間裡分享親人歡笑。</p>
+                        </figcaption><i class="ion-ios-home-outline"></i>
+                    </div>
+                    <div class="room1_img display_none">
+                        <img src="images/1.png" alt=""></div>
+                </a>
+            </div>
+            <div class="room1_right">
+                <div class="room1_right_price">森林價：<b>4990</b> /天</div>
+                <br>
+                <h3>BONBIBI</h3>
+                <h4>兩大兩小</h4>
+                <p class="room1_p">一大床兩小床</p>
+                <p class="room1_p1">小屋採光充足、視野開闊，留宿於此的旅人們
+                    <br>可以在充滿陽光綠意的窗邊或坐或臥，
+                    <br> 隨心所欲的放鬆。讓全家大小擁有一個靜謐的空間盡情享受身心靈沉靜的假期。
+                </p>
+                <div class="room1_button"><a href="#">更多資訊</a></div>
+            </div>
+        </div>
+        <div class="room1 room2">
+            <div class="room1_left room2_right">
+                <a href="">
+                    <div class="room1_img snip1206"><img src="images/2.png" alt="">
+                        <figcaption>
+                            <h2>Treevago Burl</h2>
+                            <br>
+                            <br>
+                            <p>房內穿插的暖色調元素低調內斂，不經意地讓彼此心中最真的情感在此流露，溫馨的空間裡分享親人歡笑。</p>
+                        </figcaption>
+                    </div>
+                    <div class="room1_img display_none"><img src="images/2.png" alt=""></div>
+                </a>
+            </div>
+            <div class="room1_right room2_left_box">
+                <div class="room2_left">
+                    <div class="room1_right_price">森林價：<b>4990</b> /天</div>
+                    <br>
+                    <h3>BURL</h3>
+                    <h4>一大一小</h4>
+                    <p class="room1_p">一大床</p>
+                    <p class="room1_p1">小屋的建築外觀猶如一輪優美的半月灣，靜靜佇立在原始森林的懷抱中。
+                        <br> 屋子採用環型窗戶的設計，讓旅客可欣賞戶外恬靜的景緻，暢享自然的恩惠。
+                    </p>
+                    <div class="room1_button"><a href="#">更多資訊</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="room1 room3">
+            <div class="room1_left">
+                <a href="">
+                    <div class="room1_img snip0019"><img src="images/3.png" alt="">
+                        <figcaption>
+                            <div>
+                                <h2>Treevago<br><span>Nest</span></h2></div>
+                            <div>
+                                <p>
+                                    <br>
+                                    <br>
+                                    <br>融入了在地自然風格並穿插著暖色調的元素讓舒適的住宿環境作您享樂旅遊疲累後的最佳後盾。</p>
+                            </div>
+                        </figcaption>
+                    </div>
+                </a>
+            </div>
+            <div class="room1_right">
+                <div class="room1_right_price">森林價：<b>4990</b> /天</div>
+                <br>
+                <h3>NEST</h3>
+                <h4>兩大一小</h4>
+                <p class="room1_p">一大床</p>
+                <p class="room1_p1">小屋取鳥巢之寓意，低調簡約的室內設計，
+                    <br> 融入了在地自然風格並穿插著暖色調的元素，
+                    <br>讓舒適的住宿環境作您享樂旅遊疲累後的最佳後盾。</p>
+                <div class="room1_button"><a href="#">更多資訊</a></div>
+            </div>
+        </div>
+        <div class="room1 room2">
+            <div class="room1_left room2_right">
+                <a href="">
+                    <div class="room1_img snip1206"><img src="images/4.png" alt="">
+                        <figcaption>
+                            <h2>Trillium</h2>
+                            <br>
+                            <br>
+                            <p>留宿於此的旅人們可以在四面環窗的絕妙視野或坐或臥，享受這充滿陽光綠意且靜逸的空間。</p>
+                        </figcaption>
+                    </div>
+                    <div class="room1_img display_none"><img src="images/4.png" alt=""></div>
+            </div>
+            </a>
+            <div class="room1_right room2_left_box">
+                <div class="room2_left">
+                    <div class="room1_right_price">森林價：<b>4990</b> /天</div>
+                    <br>
+                    <h3>TRILLIUM</h3>
+                    <h4>兩大一小</h4>
+                    <p class="room1_p">一大床</p>
+                    <p class="room1_p1">小屋名取自延齡草，花語是『美麗，優雅的人』。
+                        <br> 小屋設計極具現代氣息，四面環窗的巧思提供您絕妙的視野，
+                        <br> 讓您與家人沐浴在恬靜的陽光底下，享受這專屬的靜逸空間。
+                    </p>
+                    <div class="room1_button"><a href="#">更多資訊</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="room1 room3">
+            <div class="room1_left">
+                <a href="">
+                    <div class="room1_img snip1401">
+                        <img src="images/5.png" alt="">
+                        <figcaption>
+                            <h3>TEMPO</h3>
+                            <p>結合戶外的原始景色及屋的禪風意境，讓沉浸於芬多精裡的您遠離都市塵囂，徹底放鬆身心。</p>
+                        </figcaption><i class="ion-ios-location-outline"></i>
+                    </div>
+                    <div class="room1_img display_none">
+                        <img src="images/5.png" alt=""></div>
+                </a>
+            </div>
+            <div class="room1_right">
+                <div class="room1_right_price">森林價：<b>4990</b> /天</div>
+                <br>
+                <h3>TEMPO</h3>
+                <h4>兩大一小</h4>
+                <p class="room1_p">一大床</p>
+                <p class="room1_p1">位於整個園區的最深處，門前的木橋更是為小屋增添一筆淡淡的神秘色彩，
+                    <br> 結合戶外的原始景色及屋的禪風意境，創造出不一樣的寧靜與奢華。
+                </p>
+                <div class="room1_button"><a href="#">更多資訊</a></div>
+            </div>
+        </div>
+        <div class="room1 room2 room4">
+            <div class="room1_left room2_right">
+                <a href="">
+                    <div class="room1_img snip0019"><img src="images/6.png" alt="">
+                        <figcaption>
+                            <div>
+                                <h2>Treevago<br><span>Cedar</span></h2></div>
+                            <div>
+                                <p>
+                                    <br>
+                                    <br>
+                                    <br>簡單俐落的室內設計搭配大隔間，適合大全家出外旅遊的住宿空間，就算臨時加人也不用煩惱。</p>
+                            </div>
+                        </figcaption>
+                    </div>
+                </a>
+            </div>
+            <div class="room1_right room2_left_box">
+                <div class="room2_left">
+                    <div class="room1_right_price">森林價：<b>4990</b> /天</div>
+                    <br>
+                    <h3>CEDAR</h3>
+                    <h4>兩大兩小</h4>
+                    <p class="room1_p">兩大床</p>
+                    <p class="room1_p1">木屋充滿現代感與自然風格，採用較為低調及沉穩的配色，
+                        <br> 簡單俐落的室內設計搭配大隔間，液晶電視及寬頻網路等配備齊全，
+                        <br>適合大全家出外旅遊的住宿空間。</p>
+                    <div class="room1_button"><a href="#">更多資訊</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--****************************************************footer*******************************************-->
+    <div class="footer">
+        <div class="footer_box">
+            <div id="gotop"><img src="images/go_top.svg" alt=""></div>
+            <div class="footer_left">
+                <div class="footer_logo"></div>
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="">訂房須知</a></li>
+                        <li><a href="">親子課程</a></li>
+                        <li><a href="">園區總覽</a></li>
+                        <li><a href="">天氣資訊</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_right">
+                <div class="footer_info white_p">
+                    <p>T : 08-886-2345 F : 08-886-2222</p>
+                    <p>Add:宜蘭縣大同鄉太平村太平巷58號</p>
+                    <p>Email:Treevago@treevago.com.tw</p>
+                </div>
+                <div class="footer_icon">
+                    <ul>
+                        <li><a href=""><img src="images/line.png" alt="" width="30px"></a></li>
+                        <li><a href=""><img src="images/line-02.png" alt="" width="30px"></a></li>
+                        <li><a href=""><img src="images/note.png" alt="" width="110px" class="cooking_logo"></a></li>
+                        <li><a href=""><img src="images/note.png" alt="" width="110px" class="cooking_logo footer_icon_last"></a></li>
+                    </ul>
+                </div>
+                <div class="footer_last">
+                    <p>@ 2017 Treevago Co.Ltd All right reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <!--************************script************************-->
+    <script src="js/jquery.min.js"></script>
+    <!--************************script************************-->
+    <!--****************************nav_rwd(script)*****************************-->
+    <script>
+    $(".bar_box").click(function() {
+        $(this).toggleClass("nav_active");
+    });
+    </script>
+    <script>
+    $(".bar_box").click(function() {
+        $(".menu_page").toggleClass("nav_active");
+    });
+    $("#gotop").click(function() {
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+    </script>
+    <!--****************************nav_rwd*****************************-->
+</body>
+
+</html>
